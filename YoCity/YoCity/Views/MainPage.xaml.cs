@@ -12,6 +12,7 @@ namespace YoCity.Views
 		public MainPage ()
 		{
 			InitializeComponent ();
+            
 		}
 	}
 }

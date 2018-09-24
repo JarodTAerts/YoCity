@@ -29,7 +29,7 @@ namespace YoCity
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<NavigationPage>();          
             containerRegistry.RegisterForNavigation<MainPage>();
         }
     }

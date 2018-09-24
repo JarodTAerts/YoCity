@@ -2,10 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YoCity.Views.MainPage"
-             Title="{Binding Title}">
-
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to YoCity!" />
-    </StackLayout>
+             Title="{Binding Title}"
+             BackgroundColor="#42C0FB"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15" BackgroundColor="#42C0FB">
+            <Label Text="YoCity" TextColor="WhiteSmoke" FontSize="100" HorizontalOptions="CenterAndExpand" Margin="0,25,0,75"/>
+            <Entry Placeholder="Username" HorizontalOptions="FillAndExpand" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke"
+                   Text="{Binding PasswordText}"/>
+            <Entry Placeholder="Password" HorizontalOptions="FillAndExpand" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke" 
+                   IsPassword="True" Text="{Binding UsernameText}"/>
+            <Button Text="Login" HorizontalOptions="FillAndExpand" CornerRadius="20" BorderColor="WhiteSmoke"
+                    BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding LoginButtonClickedCommand}"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
 
 </ContentPage>
