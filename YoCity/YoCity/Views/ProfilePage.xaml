@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="YoCity.Views.ProfilePage"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource colorPrimary}">
+    
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15">
+            <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="Start" HeightRequest="100" WidthRequest="100"
+                   CornerRadius="50" HasShadow="False"/>
+            <Label Text="{Binding UsernameText}" TextColor="WhiteSmoke" FontSize="Medium" HorizontalOptions="CenterAndExpand" Margin="0,0,0,50"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Points: " HorizontalOptions="Start" FontSize="Large" TextColor="WhiteSmoke"/>
+                <Label Text="{Binding PointsValue}" FontSize="Large" TextColor="WhiteSmoke"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Rank: " HorizontalOptions="Start" FontSize="Large" TextColor="WhiteSmoke"/>
+                <Label Text="{Binding RankText}" FontSize="Large" TextColor="WhiteSmoke"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

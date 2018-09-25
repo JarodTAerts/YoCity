@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            xmlns:local="clr-namespace:YoCity.Views"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            x:Class="YoCity.Views.MasterTabbedPage"
+            NavigationPage.HasNavigationBar="False">
+
+    <local:ProfilePage Title="Profile" Icon="profile.png"/>
+    <local:ListMapPage Title="Deals" Icon="location.png"/>
+    <local:RedeemPointsPage Title="Redeem" Icon="gift.png"/>
+
+</TabbedPage>

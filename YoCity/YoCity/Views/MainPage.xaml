@@ -13,6 +13,8 @@
                    Text="{Binding PasswordText}"/>
             <Entry Placeholder="Password" HorizontalOptions="FillAndExpand" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke" 
                    IsPassword="True" Text="{Binding UsernameText}"/>
+            <Label Text="Username or Password incorrect. Please try again." TextColor="Red" FontSize="Small" 
+                   IsVisible="{Binding ShowError}" HorizontalOptions="CenterAndExpand"/>
             <Button Text="Login" HorizontalOptions="FillAndExpand" CornerRadius="20" BorderColor="WhiteSmoke"
                     BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding LoginButtonClickedCommand}"/>
         </StackLayout>

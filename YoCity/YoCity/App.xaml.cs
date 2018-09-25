@@ -5,6 +5,7 @@ using YoCity.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.DryIoc;
+using YoCity.Helpers;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace YoCity
@@ -23,14 +24,24 @@ namespace YoCity
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            if (Settings.StayLoggedIn && Settings.CurrentUser != null)
+            {
+                await NavigationService.NavigateAsync("NavigationPage/MasterTabbedPage");
+            }
+            else
+            {
+                await NavigationService.NavigateAsync("MainPage");
+            }
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();          
             containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<ProfilePage>();
+            containerRegistry.RegisterForNavigation<ListMapPage>();
+            containerRegistry.RegisterForNavigation<RedeemPointsPage>();
+            containerRegistry.RegisterForNavigation<MasterTabbedPage>();
         }
     }
 }
