@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace YoCity.Models
 {
-    class User
+    public class User
     {
         public string UserName
         {
@@ -20,5 +21,6 @@ namespace YoCity.Models
         {
             get; set;
         }
+        public Image ProfilePic { get; set; } = new Image() { Source = "profile.png" };
     }
 }

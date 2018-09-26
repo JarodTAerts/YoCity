@@ -4,37 +4,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using YoCity.Helpers;
+using YoCity.Models;
 
 namespace YoCity.ViewModels
 {
 	public class ProfilePageViewModel : BindableBase
 	{
-        private int _pointsValue;
-        public int PointsValue
+        private User _currentUser;
+        public User CurrentUser
         {
-            get { return _pointsValue; }
-            set { SetProperty(ref _pointsValue, value); }
+            get => _currentUser;
+            set => SetProperty(ref _currentUser, value);
         }
 
-        private string _rankText;
-        public string RankText
-        {
-            get { return _rankText; }
-            set { SetProperty(ref _rankText, value); }
-        }
-
-        private string _usernameText;
-        public string UsernameText
-        {
-            get { return _usernameText; }
-            set { SetProperty(ref _usernameText, value); }
-        }
 
         public ProfilePageViewModel()
         {
-            PointsValue = Settings.CurrentUser.Points;
-            RankText = Settings.CurrentUser.Rank+"th";
-            UsernameText = Settings.CurrentUser.UserName;
+            CurrentUser = Settings.CurrentUser;
         }
 	}
 }
