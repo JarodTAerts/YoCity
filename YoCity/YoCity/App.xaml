@@ -7,6 +7,9 @@
 
         <ResourceDictionary>
             <Color x:Key="colorPrimary">#42C0FB</Color>
+            <Color x:Key="baseTextColor">#F5F5F5</Color>
+            <Color x:Key="buttonColor">#F5F5F5</Color>
+            <Color x:Key="buttonTextColor">#42C0FB</Color>
         </ResourceDictionary>
 
     </Application.Resources>

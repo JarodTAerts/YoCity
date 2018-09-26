@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace YoCity.Helpers
 {
@@ -24,6 +25,22 @@ namespace YoCity.Helpers
             catch
             {
                 return false;
+            }
+        }
+
+        public static void SetDarkMode()
+        {
+            if (Settings.DarkMode)
+            {
+                Application.Current.Resources["colorPrimary"] = Color.FromHex("#494949");
+                Application.Current.Resources["buttonColor"] = Color.FromHex("#42C0FB");
+                Application.Current.Resources["buttonTextColor"] = Color.FromHex("#F5F5F5");
+            }
+            else
+            {
+                Application.Current.Resources["colorPrimary"] = Color.FromHex("#42C0FB");
+                Application.Current.Resources["buttonColor"] = Color.FromHex("#F5F5F5");
+                Application.Current.Resources["buttonTextColor"] = Color.FromHex("#42C0FB");
             }
         }
     }

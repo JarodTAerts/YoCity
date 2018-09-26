@@ -51,5 +51,11 @@ namespace YoCity.Helpers
             get { return AppSettings.GetValueOrDefault("StayLoggedIn", true); }
             set { AppSettings.AddOrUpdateValue("StayLoggedIn", value); }
         }
+
+        public static bool DarkMode
+        {
+            get { return AppSettings.GetValueOrDefault("DarkMode", false); }
+            set { AppSettings.AddOrUpdateValue("DarkMode", value); }
+        }
     }
 }

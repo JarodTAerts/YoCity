@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="YoCity.Views.MainPage"
              Title="{Binding Title}"
-             BackgroundColor="#42C0FB"
+             BackgroundColor="{StaticResource colorPrimary}"
              NavigationPage.HasNavigationBar="False"
              >
     <ContentPage.Content>
         
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15" BackgroundColor="#42C0FB">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15">
             <!--Show big Yo and entries for the user to enter their username and password-->
             <Label Text="YoCity" TextColor="WhiteSmoke" FontSize="100" HorizontalOptions="CenterAndExpand" Margin="0,25,0,75"/>
             <Entry Placeholder="Username" HorizontalOptions="FillAndExpand" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke"
@@ -20,7 +20,7 @@
                    IsVisible="{Binding ShowError}" HorizontalOptions="CenterAndExpand"/>
             <!--Button to login with username and password above-->
             <Button Text="Login" HorizontalOptions="FillAndExpand" CornerRadius="25" BorderColor="WhiteSmoke"
-                    BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding LoginButtonClickedCommand}"/>
+                    BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding LoginButtonClickedCommand}"/>
             <!--Text and switch to handle setting to stay logged in on app close-->
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Switch IsToggled="{Binding AutoLogin}"/>
@@ -30,7 +30,7 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Label Text="Don't have and account: " TextColor="WhiteSmoke" FontSize="Small" VerticalOptions="CenterAndExpand"/>
                 <Button Text="Create Account" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="20" BorderColor="WhiteSmoke"
-                    BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding CreateAccountButtonClickedCommand}" HeightRequest="35" 
+                    BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding CreateAccountButtonClickedCommand}" HeightRequest="35" 
                         FontSize="Micro" />
             </StackLayout>
         </StackLayout>

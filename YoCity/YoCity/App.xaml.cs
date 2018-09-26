@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.DryIoc;
 using YoCity.Helpers;
+using System;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace YoCity
@@ -24,6 +25,7 @@ namespace YoCity
         protected override async void OnInitialized()
         {
             InitializeComponent();
+            HelperFunctions.SetDarkMode();
             //Check if the user wants to stay logged in and go to the main app if they do. Log in otherwise
             if (Settings.StayLoggedIn && Settings.CurrentUser != null)
             {

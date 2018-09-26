@@ -49,8 +49,11 @@ namespace YoCity.ViewModels
         {
             Settings.CurrentUser = null;
             bool logout=await Application.Current.MainPage.DisplayAlert("Logout","Are you sure you want to log out?","Yes","No");
-            if(logout)
-                await NavigationService.NavigateAsync("MainPage"); 
+            if (logout)
+            {
+                HelperFunctions.SetDarkMode();
+                await NavigationService.NavigateAsync("MainPage");
+            }
         }
         #endregion
     }

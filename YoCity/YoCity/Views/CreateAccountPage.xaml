@@ -11,7 +11,7 @@
         <StackLayout Padding="15">
             <!--Button to go back to the login screen-->
             <Button Text="Back" HorizontalOptions="StartAndExpand" VerticalOptions="Start" CornerRadius="20" BorderColor="WhiteSmoke"
-                    BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding BackButtonClickedCommand}" HeightRequest="35" 
+                    BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding BackButtonClickedCommand}" HeightRequest="35" 
                         FontSize="Micro" />
             <Label Text="Some Info First..." FontSize="Medium" TextColor="WhiteSmoke" HorizontalOptions="CenterAndExpand"/>
             <!--Entry for user to enter their full name-->
@@ -34,7 +34,7 @@
                    IsVisible="{Binding ShowError}" HorizontalOptions="CenterAndExpand"/>
             <!--Button to create the account-->
             <Button Text="Create Account" HorizontalOptions="FillAndExpand" CornerRadius="25" BorderColor="WhiteSmoke" IsEnabled="{Binding ButtonEnabled}"
-                    BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding CreateAccountButtonClickedCommand}"/>
+                    BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding CreateAccountButtonClickedCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
