@@ -17,6 +17,10 @@
                    IsVisible="{Binding ShowError}" HorizontalOptions="CenterAndExpand"/>
             <Button Text="Login" HorizontalOptions="FillAndExpand" CornerRadius="20" BorderColor="WhiteSmoke"
                     BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding LoginButtonClickedCommand}"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Switch IsToggled="{Binding AutoLogin}"/>
+                <Label Text="Stay Logged in?" TextColor="WhiteSmoke" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
         </StackLayout>
         
     </ContentPage.Content>

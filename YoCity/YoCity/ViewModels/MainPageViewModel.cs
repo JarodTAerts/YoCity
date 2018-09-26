@@ -35,7 +35,14 @@ namespace YoCity.ViewModels
             get { return _showError; }
             set { SetProperty(ref _showError, value); }
         }
-       
+
+        private bool _autoLogin;
+        public bool AutoLogin
+        {
+            get { return _autoLogin; }
+            set { Settings.StayLoggedIn = value; SetProperty(ref _autoLogin, value); }
+        }
+
 
         public MainPageViewModel(INavigationService navigationService) 
             : base (navigationService)
@@ -45,6 +52,7 @@ namespace YoCity.ViewModels
             ShowError = false;
             UsernameText = "";
             PasswordText = "";
+            AutoLogin = Settings.StayLoggedIn;
         }
 
         private void LoginButtonClicked()

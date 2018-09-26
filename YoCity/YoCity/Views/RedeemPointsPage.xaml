@@ -9,7 +9,22 @@
 
     <ContentPage.Content>
         <StackLayout Padding="15">
-            <Label Text="Redeem Points Page" FontSize="50"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Item" FontSize="Large" HorizontalOptions="StartAndExpand" FontAttributes="Bold" TextColor="WhiteSmoke"/>
+                <Label Text="Cost" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="WhiteSmoke"/>
+            </StackLayout>
+            <ListView ItemsSource="{Binding ItemList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="StartAndExpand" TextColor="WhiteSmoke"/>
+                                <Label Text="{Binding PointsCost}" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="WhiteSmoke"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
 
     </ContentPage.Content>
