@@ -26,7 +26,7 @@ namespace YoCity
             InitializeComponent();
             if (Settings.StayLoggedIn && Settings.CurrentUser != null)
             {
-                await NavigationService.NavigateAsync("NavigationPage/MasterTabbedPage");
+                await NavigationService.NavigateAsync("MasterTabbedPage");
             }
             else
             {
@@ -43,6 +43,7 @@ namespace YoCity
             containerRegistry.RegisterForNavigation<RedeemPointsPage>();
             containerRegistry.RegisterForNavigation<MasterTabbedPage>();
             containerRegistry.RegisterForNavigation<CreateAccountPage>();
+            containerRegistry.RegisterForNavigation<SettingsPage>();
         }
     }
 }

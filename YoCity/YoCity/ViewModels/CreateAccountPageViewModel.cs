@@ -12,6 +12,7 @@ namespace YoCity.ViewModels
 	public class CreateAccountPageViewModel : ViewModelBase
     {
         public DelegateCommand CreateAccountButtonClickedCommand { get; set; }
+        public DelegateCommand BackButtonClickedCommand { get; set; }
 
         private string _fullNameText;
         public string FullNameText
@@ -74,9 +75,15 @@ namespace YoCity.ViewModels
         public CreateAccountPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             CreateAccountButtonClickedCommand = new DelegateCommand(CreateAccountButtonClicked);
+            BackButtonClickedCommand = new DelegateCommand(BackButtonClicked);
             ErrorText = "Invalid Entry.";
             ShowError = false;
             ButtonEnabled = false;
+        }
+
+        private void BackButtonClicked()
+        {
+            NavigationService.GoBackAsync();
         }
 
         private void CreateAccountButtonClicked()

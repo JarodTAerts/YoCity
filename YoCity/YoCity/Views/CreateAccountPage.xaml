@@ -9,6 +9,9 @@
 
     <ContentPage.Content>
         <StackLayout Padding="15">
+            <Button Text="Back" HorizontalOptions="StartAndExpand" VerticalOptions="Start" CornerRadius="20" BorderColor="WhiteSmoke"
+                    BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding BackButtonClickedCommand}" HeightRequest="35" 
+                        FontSize="Micro" />
             <Label Text="Some Info First..." FontSize="Medium" TextColor="WhiteSmoke" HorizontalOptions="CenterAndExpand"/>
             <Entry Placeholder="Full Name" HorizontalOptions="FillAndExpand" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke"
                    Text="{Binding FullNameText}"/>

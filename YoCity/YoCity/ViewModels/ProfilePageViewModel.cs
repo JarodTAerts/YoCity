@@ -32,10 +32,12 @@ namespace YoCity.ViewModels
         private void SettingsButtonClicked()
         {
             Console.WriteLine("Settings Button Clicked");
+            NavigationService.NavigateAsync("SettingsPage", useModalNavigation: true);
         }
 
         private void LogoutButtonClicked()
         {
+            //TODO: Make this actually clear the navigation stack somehow so there is no residual pages left 
             Settings.CurrentUser = null;          
             NavigationService.NavigateAsync("MainPage"); 
         }

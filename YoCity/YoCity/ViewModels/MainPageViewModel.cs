@@ -59,7 +59,7 @@ namespace YoCity.ViewModels
 
         private void CreateAccountButtonClicked()
         {
-            NavigationService.NavigateAsync("CreateAccountPage");
+            NavigationService.NavigateAsync("CreateAccountPage", useModalNavigation: true);
         }
 
         private void LoginButtonClicked()
@@ -68,7 +68,7 @@ namespace YoCity.ViewModels
             if ( attemptedLogin != null)
             {
                 Settings.CurrentUser = attemptedLogin;
-                NavigationService.NavigateAsync("NavigationPage/MasterTabbedPage");
+                NavigationService.NavigateAsync("MasterTabbedPage");
             }
             else
             {
