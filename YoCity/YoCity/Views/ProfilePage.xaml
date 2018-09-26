@@ -10,11 +10,23 @@
     
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15">
+            
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Logout" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="20" BorderColor="WhiteSmoke"
+                    BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding LogoutButtonClickedCommand}" HeightRequest="35" 
+                        FontSize="Micro" />
+                <Button Text="Settings" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="20" BorderColor="WhiteSmoke"
+                    BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding SettingsButtonClickedCommand}" HeightRequest="35" 
+                        FontSize="Micro" />
+            </StackLayout>
+            
             <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="Start" HeightRequest="100" WidthRequest="100"
-                   CornerRadius="20" HasShadow="False" Margin="0,40,0,0" Padding="2" IsClippedToBounds="True">
+                   CornerRadius="20" HasShadow="False" Margin="0,20,0,0" Padding="2" IsClippedToBounds="True">
                 <Image Source="{Binding CurrentUser.ProfilePic.Source}" Aspect="AspectFill"/>
             </Frame>
-            <Label Text="{Binding CurrentUser.UserName}" TextColor="WhiteSmoke" FontSize="Medium" HorizontalOptions="CenterAndExpand" Margin="0,0,0,50"/>
+            <Label Text="{Binding CurrentUser.FullName}" TextColor="WhiteSmoke" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding CurrentUser.UserName}" TextColor="WhiteSmoke" FontSize="Small" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding CurrentUser.Email}" TextColor="WhiteSmoke" FontSize="Small" HorizontalOptions="CenterAndExpand" Margin="0,0,0,50"/>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Points: " HorizontalOptions="Start" FontSize="Large" TextColor="WhiteSmoke"/>
                 <Label Text="{Binding CurrentUser.Points}" FontSize="Large" TextColor="WhiteSmoke"/>

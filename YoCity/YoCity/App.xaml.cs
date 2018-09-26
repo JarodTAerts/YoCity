@@ -42,6 +42,7 @@ namespace YoCity
             containerRegistry.RegisterForNavigation<ListMapPage>();
             containerRegistry.RegisterForNavigation<RedeemPointsPage>();
             containerRegistry.RegisterForNavigation<MasterTabbedPage>();
+            containerRegistry.RegisterForNavigation<CreateAccountPage>();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace YoCity.Helpers
 {
     class APIHelper
     {
-        private static User testUser= new User() { UserName = "User John", Points = 100, Rank = 10 };
+        private static User testUser= new User() { UserName = "UserJohn", FullName="John User", Email="userjohn@email.com", Points = 100, Rank = 10 };
         private static ObservableCollection<Location> testLocations = new ObservableCollection<Location>() {
             new Location() { Name="LeadBelly's", PointValue=8 },
             new Location() { Name="Ivana Cone", PointValue=5 },
@@ -36,6 +36,12 @@ namespace YoCity.Helpers
             {
                 return null;
             }
+        }
+
+        public static User CreateUser(User newUser)
+        {
+            //TODO: Actually hook this up when API is done
+            return testUser;
         }
 
         public static ObservableCollection<Location> GetLocations()

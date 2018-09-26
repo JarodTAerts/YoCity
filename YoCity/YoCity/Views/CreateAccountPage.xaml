@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="YoCity.Views.CreateAccountPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource colorPrimary}">
+
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <Label Text="Some Info First..." FontSize="Medium" TextColor="WhiteSmoke" HorizontalOptions="CenterAndExpand"/>
+            <Entry Placeholder="Full Name" HorizontalOptions="FillAndExpand" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke"
+                   Text="{Binding FullNameText}"/>
+            <Entry Placeholder="Username" HorizontalOptions="FillAndExpand" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke"
+                   Text="{Binding UsernameText}"/>
+            <Entry Placeholder="Email" HorizontalOptions="FillAndExpand" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke"
+                   Text="{Binding EmailText}"/>
+            <Entry Placeholder="Password" HorizontalOptions="FillAndExpand" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke" 
+                   IsPassword="True" Text="{Binding PasswordText}"/>
+            <Entry Placeholder="Re-enter Password" HorizontalOptions="FillAndExpand" PlaceholderColor="WhiteSmoke" TextColor="WhiteSmoke" 
+                   IsPassword="True" Text="{Binding PasswordText1}"/>
+            <Label Text="{Binding ErrorText}" TextColor="Red" FontSize="Small" 
+                   IsVisible="{Binding ShowError}" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Create Account" HorizontalOptions="FillAndExpand" CornerRadius="25" BorderColor="WhiteSmoke" IsEnabled="{Binding ButtonEnabled}"
+                    BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding CreateAccountButtonClickedCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

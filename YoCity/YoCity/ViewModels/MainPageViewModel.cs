@@ -13,6 +13,7 @@ namespace YoCity.ViewModels
     public class MainPageViewModel : ViewModelBase
     {
         public DelegateCommand LoginButtonClickedCommand { get; set; }
+        public DelegateCommand CreateAccountButtonClickedCommand { get; set; }
 
         private string _usernameText;
         public string UsernameText
@@ -49,10 +50,16 @@ namespace YoCity.ViewModels
         {
             Title = "Main Page";
             LoginButtonClickedCommand = new DelegateCommand(LoginButtonClicked);
+            CreateAccountButtonClickedCommand = new DelegateCommand(CreateAccountButtonClicked);
             ShowError = false;
             UsernameText = "";
             PasswordText = "";
             AutoLogin = Settings.StayLoggedIn;
+        }
+
+        private void CreateAccountButtonClicked()
+        {
+            NavigationService.NavigateAsync("CreateAccountPage");
         }
 
         private void LoginButtonClicked()
