@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,8 +11,10 @@ using YoCity.Models;
 
 namespace YoCity.ViewModels
 {
-	public class ListMapPageViewModel : BindableBase
+	public class ListMapPageViewModel : ViewModelBase
 	{
+        #region Delegates and Bindable Properties
+        //Attempt at making proper font size, failed
         public static double Heading = Device.GetNamedSize(NamedSize.Large, typeof(Label))*1.2;
 
         private ObservableCollection<Location> _locationList;
@@ -20,10 +23,13 @@ namespace YoCity.ViewModels
             get { return _locationList; }
             set { SetProperty(ref _locationList, value); }
         }
+        #endregion
 
-        public ListMapPageViewModel()
+        #region Constructor
+        public ListMapPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             LocationList = APIHelper.GetLocations();
         }
-	}
+        #endregion
+    }
 }

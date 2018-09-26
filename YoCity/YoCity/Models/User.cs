@@ -5,6 +5,9 @@ using Xamarin.Forms;
 
 namespace YoCity.Models
 {
+    /// <summary>
+    /// Class that represents a User and all the data assosiated with them
+    /// </summary>
     public class User
     {
         public string UserName

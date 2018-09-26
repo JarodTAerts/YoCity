@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ApplicationDefinition Include="Images\locations.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="Images\gift.png" />
     <EmbeddedResource Include="Images\location.png" />
     <EmbeddedResource Include="Images\profile.png" />

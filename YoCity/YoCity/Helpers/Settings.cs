@@ -8,6 +8,9 @@ using YoCity.Models;
 
 namespace YoCity.Helpers
 {
+    /// <summary>
+    /// Class that holds persistant offline settings for the app
+    /// </summary>
     class Settings
     {
         private static ISettings AppSettings
@@ -25,7 +28,9 @@ namespace YoCity.Helpers
 
         #endregion
 
-
+        /// <summary>
+        /// Setting that stores the current user that is logged into the app
+        /// </summary>
         public static User CurrentUser
         {
             get
@@ -38,6 +43,9 @@ namespace YoCity.Helpers
             }
         }
 
+        /// <summary>
+        /// Setting that stores whether the app should make the user log in each time they open the app
+        /// </summary>
         public static bool StayLoggedIn
         {
             get { return AppSettings.GetValueOrDefault("StayLoggedIn", true); }

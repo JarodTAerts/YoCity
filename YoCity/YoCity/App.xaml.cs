@@ -24,6 +24,7 @@ namespace YoCity
         protected override async void OnInitialized()
         {
             InitializeComponent();
+            //Check if the user wants to stay logged in and go to the main app if they do. Log in otherwise
             if (Settings.StayLoggedIn && Settings.CurrentUser != null)
             {
                 await NavigationService.NavigateAsync("MasterTabbedPage");

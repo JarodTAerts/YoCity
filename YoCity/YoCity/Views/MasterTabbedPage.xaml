@@ -9,8 +9,11 @@
             x:Class="YoCity.Views.MasterTabbedPage"
             NavigationPage.HasNavigationBar="False">
 
-    <local:ProfilePage Title="Profile" Icon="profile.png"/>
+    <!--Add pagess to the tabbed page with their icons,
+        They are ordered left to right on the tab page
+        in the order they are listed here-->
     <local:ListMapPage Title="Deals" Icon="location.png"/>
     <local:RedeemPointsPage Title="Redeem" Icon="gift.png"/>
+    <local:ProfilePage Title="Profile" Icon="profile.png"/>
 
 </TabbedPage>

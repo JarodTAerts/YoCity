@@ -9,14 +9,17 @@
 
     <ContentPage.Content>
         <StackLayout Padding="15">
+            <!--Labels that form the header of the list of swag items-->
             <StackLayout Orientation="Horizontal">
                 <Label Text="Item" FontSize="Large" HorizontalOptions="StartAndExpand" FontAttributes="Bold" TextColor="WhiteSmoke"/>
                 <Label Text="Cost" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="WhiteSmoke"/>
             </StackLayout>
+            <!--List view that shows all the swag items contained in ItemList-->
             <ListView ItemsSource="{Binding ItemList}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <!--Custom view cell that shows the name of the swag item and the number of points it costs-->
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="StartAndExpand" TextColor="WhiteSmoke"/>
                                 <Label Text="{Binding PointsCost}" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="WhiteSmoke"/>

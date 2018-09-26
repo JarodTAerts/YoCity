@@ -11,6 +11,7 @@ namespace YoCity.ViewModels
 {
 	public class CreateAccountPageViewModel : ViewModelBase
     {
+        #region Delegates and Bindable Properties
         public DelegateCommand CreateAccountButtonClickedCommand { get; set; }
         public DelegateCommand BackButtonClickedCommand { get; set; }
 
@@ -70,8 +71,9 @@ namespace YoCity.ViewModels
             get { return _buttonEnabled; }
             set { SetProperty(ref _buttonEnabled, value); }
         }
+        #endregion
 
-
+        #region Constructor
         public CreateAccountPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             CreateAccountButtonClickedCommand = new DelegateCommand(CreateAccountButtonClicked);
@@ -80,22 +82,33 @@ namespace YoCity.ViewModels
             ShowError = false;
             ButtonEnabled = false;
         }
+        #endregion
 
+        #region Command Functions
+        /// <summary>
+        /// Function that handles when the user presses the customm back button
+        /// </summary>
         private void BackButtonClicked()
         {
             NavigationService.GoBackAsync();
         }
 
+        /// <summary>
+        /// Function that handles when create account button is pressed
+        /// </summary>
         private void CreateAccountButtonClicked()
         {
+            // Make sure every field is filled out
             if (FullNameText == null || UsernameText == null || EmailText == null
                 || PasswordText == null || PasswordText1 == null)
             {
                ShowError = true;
             }
+            // Make sure there are no errors being shown and then call create user function
             if (!ShowError)
             {
                 User newUser=APIHelper.CreateUser(new User() { UserName = UsernameText, FullName=FullNameText, Email = EmailText, Points = 0, Rank=0 });
+                //If user is created successfully then go back to login otherwise show an error
                 if (newUser != null)
                 {
                     NavigationService.GoBackAsync();
@@ -107,7 +120,12 @@ namespace YoCity.ViewModels
                 }
             }
         }
+        #endregion
 
+        #region Helper Functions
+        /// <summary>
+        /// Function to check if the two passwords you entered were the same
+        /// </summary>
         private void CheckPasswordMatch()
         {
             if (PasswordText.Equals(PasswordText1))
@@ -121,6 +139,9 @@ namespace YoCity.ViewModels
             }
         }
 
+        /// <summary>
+        /// Function to make sure the email you entered is in a valid format
+        /// </summary>
         private void CheckEmailText()
         {
             if (!HelperFunctions.IsValidEmail(EmailText))
@@ -134,8 +155,14 @@ namespace YoCity.ViewModels
             }
         }
 
+        /// <summary>
+        /// Function to check that all the entries are not null, Basically the same thing as what 
+        /// is handled in the create account clicked function. Using this function will be better.
+        /// This method disables the button 
+        /// </summary>
         private void CheckValidEntries()
         {
+            // TODO: Find out how to make this functiono work
             Console.WriteLine("Checking entries: {0}", ButtonEnabled);
             if (FullNameText == null || UsernameText == null || EmailText == null
                 || PasswordText == null || PasswordText1 == null)
@@ -147,7 +174,7 @@ namespace YoCity.ViewModels
                 ButtonEnabled = true;
             }
         }
-
+        #endregion
 
     }
 }

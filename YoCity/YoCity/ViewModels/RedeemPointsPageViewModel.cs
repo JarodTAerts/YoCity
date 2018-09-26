@@ -1,5 +1,6 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,8 +11,9 @@ using YoCity.Models;
 
 namespace YoCity.ViewModels
 {
-	public class RedeemPointsPageViewModel : BindableBase
+	public class RedeemPointsPageViewModel : ViewModelBase
 	{
+        #region Delegates and Bindable Properties
         public static double Heading = Device.GetNamedSize(NamedSize.Large, typeof(Label)) * 1.2;
 
         private ObservableCollection<Sawg> _itemList;
@@ -20,10 +22,13 @@ namespace YoCity.ViewModels
             get { return _itemList; }
             set { SetProperty(ref _itemList,value); }
         }
+        #endregion
 
-        public RedeemPointsPageViewModel()
+        #region Constructor
+        public RedeemPointsPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             ItemList = APIHelper.GetSwag();
         }
-	}
+        #endregion
+    }
 }

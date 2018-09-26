@@ -4,6 +4,7 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.Forms;
 using YoCity.Helpers;
 using YoCity.Models;
 
@@ -11,6 +12,7 @@ namespace YoCity.ViewModels
 {
 	public class ProfilePageViewModel : ViewModelBase
     {
+        #region Delegates and Bindable Properties
         public DelegateCommand LogoutButtonClickedCommand { get; set; }
         public DelegateCommand SettingsButtonClickedCommand { get; set; }
 
@@ -20,26 +22,36 @@ namespace YoCity.ViewModels
             get => _currentUser;
             set => SetProperty(ref _currentUser, value);
         }
+        #endregion
 
-
+        #region Constructor
         public ProfilePageViewModel(INavigationService navigationService) : base(navigationService)
         {
             CurrentUser = Settings.CurrentUser;
             LogoutButtonClickedCommand = new DelegateCommand(LogoutButtonClicked);
             SettingsButtonClickedCommand = new DelegateCommand(SettingsButtonClicked);
         }
+        #endregion
 
+        #region Command Functions
+        /// <summary>
+        /// Functiono to go to setting page when the settings button is hit
+        /// </summary>
         private void SettingsButtonClicked()
         {
-            Console.WriteLine("Settings Button Clicked");
             NavigationService.NavigateAsync("SettingsPage", useModalNavigation: true);
         }
 
-        private void LogoutButtonClicked()
+        /// <summary>
+        /// Function to logout of the app when the button is hit
+        /// </summary>
+        private async void LogoutButtonClicked()
         {
-            //TODO: Make this actually clear the navigation stack somehow so there is no residual pages left 
-            Settings.CurrentUser = null;          
-            NavigationService.NavigateAsync("MainPage"); 
+            Settings.CurrentUser = null;
+            bool logout=await Application.Current.MainPage.DisplayAlert("Logout","Are you sure you want to log out?","Yes","No");
+            if(logout)
+                await NavigationService.NavigateAsync("MainPage"); 
         }
+        #endregion
     }
 }

@@ -10,6 +10,7 @@ namespace YoCity.ViewModels
 {
 	public class SettingsPageViewModel : ViewModelBase
 	{
+        #region Delegates and Bindable Properties
         public DelegateCommand BackButtonClickedCommand { get; set; }
 
         private bool _autoLogin;
@@ -18,15 +19,20 @@ namespace YoCity.ViewModels
             get { return _autoLogin; }
             set { Settings.StayLoggedIn = value; SetProperty(ref _autoLogin, value); }
         }
+        #endregion
 
+        #region Constructor
         public SettingsPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             BackButtonClickedCommand = new DelegateCommand(BackButtonClicked);
         }
+        #endregion
 
+        #region Command Functions
         private void BackButtonClicked()
         {
             NavigationService.GoBackAsync();
         }
+        #endregion
     }
 }

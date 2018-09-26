@@ -4,6 +4,9 @@ using System.Text;
 
 namespace YoCity.Models
 {
+    /// <summary>
+    /// Class incorrectly spelt that represents swag items that points can be redeemed for
+    /// </summary>
     public class Sawg
     {
         public string Name

@@ -10,14 +10,17 @@
 
     <ContentPage.Content>
         <StackLayout Padding="15">
+            <!--Labels horizontal that are the header for the list on the page-->
             <StackLayout Orientation="Horizontal">
                 <Label Text="Location" FontSize="Large" HorizontalOptions="StartAndExpand" FontAttributes="Bold" TextColor="WhiteSmoke"/>
                 <Label Text="Point Value" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="WhiteSmoke"/>
             </StackLayout>
+            <!--Listview to show all the locations in LocationList-->
             <ListView ItemsSource="{Binding LocationList}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <!--Custom Viewcell to show the locations and their point values-->
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="StartAndExpand" TextColor="WhiteSmoke"/>
                                 <Label Text="{Binding PointValue}" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="WhiteSmoke"/>

@@ -10,11 +10,12 @@
 
     <ContentPage.Content>
         <StackLayout Padding="15">
+            <!--Button to go back to the last page-->
             <Button Text="Back" HorizontalOptions="StartAndExpand" VerticalOptions="Start" CornerRadius="20" BorderColor="WhiteSmoke"
                     BackgroundColor="WhiteSmoke" TextColor="{StaticResource colorPrimary}" Command="{Binding BackButtonClickedCommand}" HeightRequest="35" 
                         FontSize="Micro" />
             <Label Text="Settings" FontSize="30" FontAttributes="Bold" TextColor="WhiteSmoke" HorizontalOptions="StartAndExpand" Margin="0,0,0,20"/>
-
+            <!--Switch to change setting to stay logged in when the app is closed-->
             <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                 <Switch IsToggled="{Binding AutoLogin}"/>
                 <Label Text="Stay Logged in?" TextColor="WhiteSmoke" VerticalOptions="CenterAndExpand"/>

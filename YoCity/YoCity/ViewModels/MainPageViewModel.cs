@@ -12,6 +12,7 @@ namespace YoCity.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
+        #region Delegates and Bindable Properties
         public DelegateCommand LoginButtonClickedCommand { get; set; }
         public DelegateCommand CreateAccountButtonClickedCommand { get; set; }
 
@@ -43,8 +44,9 @@ namespace YoCity.ViewModels
             get { return _autoLogin; }
             set { Settings.StayLoggedIn = value; SetProperty(ref _autoLogin, value); }
         }
+        #endregion
 
-
+        #region Constructor
         public MainPageViewModel(INavigationService navigationService) 
             : base (navigationService)
         {
@@ -56,15 +58,25 @@ namespace YoCity.ViewModels
             PasswordText = "";
             AutoLogin = Settings.StayLoggedIn;
         }
+        #endregion
 
+        #region Command Functions
+        /// <summary>
+        /// Function that goes to the create account page when the create account button is hit
+        /// </summary>
         private void CreateAccountButtonClicked()
         {
             NavigationService.NavigateAsync("CreateAccountPage", useModalNavigation: true);
         }
 
+        /// <summary>
+        /// Function that handles the login process when that button is hit
+        /// </summary>
         private void LoginButtonClicked()
         {
+            // Attempt login through API
             User attemptedLogin = APIHelper.Login(UsernameText, PasswordText);
+            // If successful go into main part of app, otherwise show error
             if ( attemptedLogin != null)
             {
                 Settings.CurrentUser = attemptedLogin;
@@ -75,5 +87,6 @@ namespace YoCity.ViewModels
                 ShowError = true;
             }
         }
+        #endregion
     }
 }
