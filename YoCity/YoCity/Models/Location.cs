@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using Xamarin.Forms;
 
 namespace YoCity.Models
 {
@@ -31,5 +31,14 @@ namespace YoCity.Models
             get;
             set;
         }
+
+        public Image Thumbnail { get; set; } = new Image() { Source = "location.png" };
+
+        public List<Image> ImageList { get; set; } =
+            new List<Image>() {
+             new Image() { Source = "profile.png" },
+             new Image() { Source = "location.png" },
+             new Image() { Source = "gift.png" },
+            };
     }
 }

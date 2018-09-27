@@ -21,8 +21,12 @@
                         <ViewCell>
                             <!--Custom view cell that shows the name of the swag item and the number of points it costs-->
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="StartAndExpand" TextColor="{StaticResource baseTextColor}"/>
-                                <Label Text="{Binding PointsCost}" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="{StaticResource baseTextColor}"/>
+                                <Image Source="{Binding Thumbnail.Source}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" 
+                                       HeightRequest="30" WidthRequest="30"/>
+                                <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="StartAndExpand" TextColor="{StaticResource baseTextColor}"
+                                       VerticalOptions="CenterAndExpand"/>
+                                <Label Text="{Binding PointsCost}" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="{StaticResource baseTextColor}"
+                                       VerticalOptions="CenterAndExpand"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
