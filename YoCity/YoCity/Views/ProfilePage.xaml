@@ -12,10 +12,10 @@
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="15">
             <!--Two buttons on the top left and right that are for logging out and going to settings-->
             <StackLayout Orientation="Horizontal">
-                <Button Text="Logout" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="20" BorderColor="WhiteSmoke"
+                <Button Text="Logout" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="20" BorderColor="{StaticResource buttonColor}"
                     BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding LogoutButtonClickedCommand}" HeightRequest="35" 
                         FontSize="Micro" />
-                <Button Text="Settings" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="20" BorderColor="WhiteSmoke"
+                <Button Text="Settings" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="20" BorderColor="{StaticResource buttonColor}"
                     BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding SettingsButtonClickedCommand}" HeightRequest="35" 
                         FontSize="Micro" />
             </StackLayout>
@@ -25,17 +25,17 @@
                 <Image Source="{Binding CurrentUser.ProfilePic.Source}" Aspect="AspectFill"/>
             </Frame>
             <!--Labels that show info about user-->
-            <Label Text="{Binding CurrentUser.FullName}" TextColor="WhiteSmoke" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
-            <Label Text="{Binding CurrentUser.UserName}" TextColor="WhiteSmoke" FontSize="Small" HorizontalOptions="CenterAndExpand"/>
-            <Label Text="{Binding CurrentUser.Email}" TextColor="WhiteSmoke" FontSize="Small" HorizontalOptions="CenterAndExpand" Margin="0,0,0,50"/>
+            <Label Text="{Binding CurrentUser.FullName}" TextColor="{StaticResource baseTextColor}" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding CurrentUser.UserName}" TextColor="{StaticResource baseTextColor}" FontSize="Small" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding CurrentUser.Email}" TextColor="{StaticResource baseTextColor}" FontSize="Small" HorizontalOptions="CenterAndExpand" Margin="0,0,0,50"/>
             <!--Labels that show info about user in relation to their app use status, points, rank, etc.-->
             <StackLayout Orientation="Horizontal">
-                <Label Text="Points: " HorizontalOptions="Start" FontSize="Large" TextColor="WhiteSmoke"/>
-                <Label Text="{Binding CurrentUser.Points}" FontSize="Large" TextColor="WhiteSmoke"/>
+                <Label Text="Points: " HorizontalOptions="Start" FontSize="Large" TextColor="{StaticResource baseTextColor}"/>
+                <Label Text="{Binding CurrentUser.Points}" FontSize="Large" TextColor="{StaticResource baseTextColor}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Rank: " HorizontalOptions="Start" FontSize="Large" TextColor="WhiteSmoke"/>
-                <Label Text="{Binding CurrentUser.Rank}" FontSize="Large" TextColor="WhiteSmoke"/>
+                <Label Text="Rank: " HorizontalOptions="Start" FontSize="Large" TextColor="{StaticResource baseTextColor}"/>
+                <Label Text="{Binding CurrentUser.Rank}" FontSize="Large" TextColor="{StaticResource baseTextColor}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

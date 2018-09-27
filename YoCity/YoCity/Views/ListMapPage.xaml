@@ -12,8 +12,8 @@
         <StackLayout Padding="15">
             <!--Labels horizontal that are the header for the list on the page-->
             <StackLayout Orientation="Horizontal">
-                <Label Text="Location" FontSize="Large" HorizontalOptions="StartAndExpand" FontAttributes="Bold" TextColor="WhiteSmoke"/>
-                <Label Text="Point Value" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="WhiteSmoke"/>
+                <Label Text="Location" FontSize="Large" HorizontalOptions="StartAndExpand" FontAttributes="Bold" TextColor="{StaticResource baseTextColor}"/>
+                <Label Text="Point Value" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="{StaticResource baseTextColor}"/>
             </StackLayout>
             <!--Listview to show all the locations in LocationList-->
             <ListView ItemsSource="{Binding LocationList}" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}">
@@ -22,8 +22,8 @@
                         <ViewCell>
                             <!--Custom Viewcell to show the locations and their point values-->
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="StartAndExpand" TextColor="WhiteSmoke"/>
-                                <Label Text="{Binding PointValue}" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="WhiteSmoke"/>
+                                <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="StartAndExpand" TextColor="{StaticResource baseTextColor}"/>
+                                <Label Text="{Binding PointValue}" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="{StaticResource baseTextColor}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
