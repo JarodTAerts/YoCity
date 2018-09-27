@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="YoCity.Views.DisplayItemPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource colorPrimary}">
+
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            <!--Button to go back to the login screen-->
+            <Button Text="Back" HorizontalOptions="StartAndExpand" VerticalOptions="Start" CornerRadius="20" BorderColor="WhiteSmoke"
+                    BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding BackButtonClickedCommand}" HeightRequest="35" 
+                        FontSize="Micro" />
+            <Label Text="{Binding Name}" FontSize="Large" TextColor="{StaticResource baseTextColor}" HorizontalOptions="StartAndExpand"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Points: " HorizontalOptions="Start" FontSize="Medium" TextColor="{StaticResource baseTextColor}"/>
+                <Label Text="{Binding Points}" FontSize="Medium" TextColor="{StaticResource baseTextColor}"/>
+            </StackLayout>
+
+            <Label Text="{Binding Description}" FontSize="Small" TextColor="{StaticResource baseTextColor}" HorizontalOptions="StartAndExpand"/>
+            <!--Button to create the account-->
+            <Button Text="{Binding ButtonText}" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" CornerRadius="25" BorderColor="{StaticResource buttonColor}"
+                    BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding ActionButtonClickedCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+  
+</ContentPage>

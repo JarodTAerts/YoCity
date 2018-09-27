@@ -15,7 +15,7 @@
                 <Label Text="Cost" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="WhiteSmoke"/>
             </StackLayout>
             <!--List view that shows all the swag items contained in ItemList-->
-            <ListView ItemsSource="{Binding ItemList}">
+            <ListView ItemsSource="{Binding ItemList}" SelectedItem="{Binding SelectedSwag, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

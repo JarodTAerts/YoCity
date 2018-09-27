@@ -16,12 +16,17 @@ namespace YoCity.Models
             get; set;
         }
 
+        public string Description
+        {
+            get; set;
+        }
+
         public int PointValue
         {
             get; set;
         }
 
-        public Tuple<int,int> GPSCoordinates
+        public Tuple<double,double> GPSCoordinates
         {
             get;
             set;

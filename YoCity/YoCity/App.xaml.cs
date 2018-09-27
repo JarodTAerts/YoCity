@@ -47,6 +47,7 @@ namespace YoCity
             containerRegistry.RegisterForNavigation<MasterTabbedPage>();
             containerRegistry.RegisterForNavigation<CreateAccountPage>();
             containerRegistry.RegisterForNavigation<SettingsPage>();
+            containerRegistry.RegisterForNavigation<DisplayItemPage>();
         }
     }
 }

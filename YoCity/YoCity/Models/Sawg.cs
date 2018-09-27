@@ -14,6 +14,11 @@ namespace YoCity.Models
             get; set;
         }
 
+        public string Description
+        {
+            get; set;
+        }
+
         public int PointsCost
         {
             get; set;

@@ -14,11 +14,12 @@ namespace YoCity.Helpers
         // Here are some static test variables I am using to develop UI while the API doesnt exist 
         private static User testUser= new User() { UserName = "UserJohn", FullName="John User", Email="userjohn@email.com", Points = 100, Rank = 10 };
         private static ObservableCollection<Location> testLocations = new ObservableCollection<Location>() {
-            new Location() { Name="LeadBelly's", PointValue=8 },
-            new Location() { Name="Ivana Cone", PointValue=5 },
-            new Location() { Name="Hurt's Donuts", PointValue=3 },
-            new Location() { Name="The Rail Yard", PointValue=7 },
-            new Location() { Name="Pinicale", PointValue=10 },
+            new Location() { Name="LeadBelly's", PointValue=8, GPSCoordinates=new Tuple<double, double>(40.816,-96.710),
+                Description="A gourmet burger joint that brings the bur to burger."},
+            new Location() { Name="Ivana Cone", PointValue=5, GPSCoordinates=new Tuple<double, double>(0,0) },
+            new Location() { Name="Hurt's Donuts", PointValue=3, GPSCoordinates=new Tuple<double, double>(0,0) },
+            new Location() { Name="The Rail Yard", PointValue=7, GPSCoordinates=new Tuple<double, double>(0,0) },
+            new Location() { Name="Pinicale", PointValue=10, GPSCoordinates=new Tuple<double, double>(0,0) },
         };
         private static ObservableCollection<Sawg> testSawgs = new ObservableCollection<Sawg>()
         {

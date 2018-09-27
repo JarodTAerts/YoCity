@@ -16,7 +16,7 @@
                 <Label Text="Point Value" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="WhiteSmoke"/>
             </StackLayout>
             <!--Listview to show all the locations in LocationList-->
-            <ListView ItemsSource="{Binding LocationList}">
+            <ListView ItemsSource="{Binding LocationList}" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

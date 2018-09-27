@@ -22,6 +22,17 @@ namespace YoCity.ViewModels
             get { return _itemList; }
             set { SetProperty(ref _itemList,value); }
         }
+
+        private Sawg _selectedSwag;
+        public Sawg SelectedSwag
+        {
+            get => _selectedSwag;
+            set
+            {
+                SetProperty(ref _selectedSwag, value);
+                ShowSwag();
+            }
+        }
         #endregion
 
         #region Constructor
@@ -30,5 +41,18 @@ namespace YoCity.ViewModels
             ItemList = APIHelper.GetSwag();
         }
         #endregion
+
+        private async void ShowSwag()
+        {
+            if (SelectedSwag != null)
+            {
+                Sawg sendSwag = SelectedSwag;
+                SelectedSwag = null;
+                NavigationParameters navParams = new NavigationParameters();
+                navParams.Add("SWAG", sendSwag);
+                await NavigationService.NavigateAsync("DisplayItemPage", navParams);
+                SelectedSwag = null;
+            }
+        }
     }
 }

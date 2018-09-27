@@ -23,6 +23,17 @@ namespace YoCity.ViewModels
             get { return _locationList; }
             set { SetProperty(ref _locationList, value); }
         }
+
+        private Location _selectedLocation;
+        public Location SelectedLocation
+        {
+            get => _selectedLocation;
+            set
+            {
+                SetProperty(ref _selectedLocation,value);
+                ShowLocation();
+            }
+        }
         #endregion
 
         #region Constructor
@@ -31,5 +42,18 @@ namespace YoCity.ViewModels
             LocationList = APIHelper.GetLocations();
         }
         #endregion
+
+        private async void ShowLocation()
+        {
+            if (SelectedLocation != null)
+            {
+                Location sendLocation = SelectedLocation;
+                SelectedLocation = null;
+                NavigationParameters navParams = new NavigationParameters();
+                navParams.Add("LOCATION",sendLocation);
+                await NavigationService.NavigateAsync("DisplayItemPage",navParams);
+            }
+        }
+
     }
 }
