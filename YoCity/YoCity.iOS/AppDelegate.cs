@@ -1,8 +1,9 @@
 ﻿using Foundation;
+using Plugin.Geofence;
 using Prism;
 using Prism.Ioc;
 using UIKit;
-
+using YoCity.Helpers;
 
 namespace YoCity.iOS
 {
@@ -23,6 +24,9 @@ namespace YoCity.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
+
+            // Initilize the geofence, much easier than on android
+            CrossGeofence.Initialize<CrossGeofenceListener>();
 
             return base.FinishedLaunching(app, options);
         }
