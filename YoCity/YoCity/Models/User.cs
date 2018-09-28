@@ -35,6 +35,6 @@ namespace YoCity.Models
             get; set;
         }
 
-        public Image ProfilePic { get; set; } = new Image() { Source = "profile.png" };
+        public Image ProfilePic { get; set; } = new Image() { Source = "profileHighRes" };
     }
 }

@@ -7,6 +7,9 @@ using Xamarin.Forms.Xaml;
 using Prism.DryIoc;
 using YoCity.Helpers;
 using System;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace YoCity
@@ -35,6 +38,14 @@ namespace YoCity
             {
                 await NavigationService.NavigateAsync("MainPage");
             }
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            AppCenter.Start("android=0a93fd0d-1fac-4461-82df-39e73c751754;" + 
+                "uwp={Your UWP App secret here};" +
+                "ios=b843fcb1-ec11-430c-a0c4-3c4ece6a16e0;", typeof(Analytics), typeof(Crashes));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

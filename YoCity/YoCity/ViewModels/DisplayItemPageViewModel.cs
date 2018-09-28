@@ -93,7 +93,7 @@ namespace YoCity.ViewModels
             NavigationService.GoBackAsync();
         }
 
-        public override void OnNavigatedTo(NavigationParameters parameters)
+        public override void OnNavigatingTo(NavigationParameters parameters)
         {
             if (parameters.ContainsKey("LOCATION"))
             {

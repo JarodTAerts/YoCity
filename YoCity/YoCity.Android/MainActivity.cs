@@ -5,6 +5,7 @@ using Android.OS;
 using Prism;
 using Prism.Ioc;
 
+
 namespace YoCity.Droid
 {
     [Activity(Label = "YoCity", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]

@@ -39,14 +39,19 @@ namespace YoCity.ViewModels
         #region Constructor
         public ListMapPageViewModel(INavigationService navigationService) : base(navigationService)
         {
+            //Get locations, might move this to OnNavigatingTo or something when it is actually getting things from the API
             LocationList = APIHelper.GetLocations();
         }
         #endregion
 
+        /// <summary>
+        /// Function that will open up the display item page showing the location that is selected
+        /// </summary>
         private async void ShowLocation()
         {
             if (SelectedLocation != null)
             {
+                //Have to set the selected location to a temp and then null it so it isnt selected when user comes back to this page
                 Location sendLocation = SelectedLocation;
                 SelectedLocation = null;
                 NavigationParameters navParams = new NavigationParameters();

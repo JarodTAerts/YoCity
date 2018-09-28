@@ -32,13 +32,13 @@ namespace YoCity.Models
             set;
         }
 
-        public Image Thumbnail { get; set; } = new Image() { Source = "location.png" };
+        public Image Thumbnail { get; set; } = new Image() { Source = "location" };
 
         public List<Image> ImageList { get; set; } =
             new List<Image>() {
-             new Image() { Source = "profile.png" },
-             new Image() { Source = "location.png" },
-             new Image() { Source = "gift.png" },
+             new Image() { Source = "profile" },
+             new Image() { Source = "location" },
+             new Image() { Source = "gift" },
             };
     }
 }
