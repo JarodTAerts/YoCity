@@ -54,8 +54,8 @@
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <BundleAssemblies>false</BundleAssemblies>
-    <AndroidLinkMode>None</AndroidLinkMode>
-    <EnableProguard>true</EnableProguard>
+    <AndroidLinkMode>Full</AndroidLinkMode>
+    <EnableProguard>false</EnableProguard>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
