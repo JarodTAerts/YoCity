@@ -15,14 +15,18 @@
                 <Label Text="Cost" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="{StaticResource baseTextColor}"/>
             </StackLayout>
             <!--List view that shows all the swag items contained in ItemList-->
-            <ListView ItemsSource="{Binding ItemList}" SelectedItem="{Binding SelectedSwag, Mode=TwoWay}">
+            <ListView ItemsSource="{Binding ItemList}" SelectedItem="{Binding SelectedSwag, Mode=TwoWay}" RowHeight="55" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <!--Custom view cell that shows the name of the swag item and the number of points it costs-->
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding Thumbnail.Source}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" 
-                                       HeightRequest="30" WidthRequest="30"/>
+                                <!--<Image Source="{Binding Thumbnail.Source}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" 
+                                       HeightRequest="30" WidthRequest="30"/>-->
+                                <Frame HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="50"
+                                    CornerRadius="10" HasShadow="False" Margin="2,2,2,2" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent">
+                                    <Image Source="{Binding Thumbnail.Source}" Aspect="AspectFill"/>
+                                </Frame>
                                 <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="StartAndExpand" TextColor="{StaticResource baseTextColor}"
                                        VerticalOptions="CenterAndExpand"/>
                                 <Label Text="{Binding PointsCost}" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="{StaticResource baseTextColor}"

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using Xamarin.Forms;
 using YoCity.Models;
 
 namespace YoCity.Helpers
@@ -15,7 +16,8 @@ namespace YoCity.Helpers
         private static User testUser= new User() { UserName = "UserJohn", FullName="John User", Email="userjohn@email.com", Points = 100, Rank = 10 };
         private static ObservableCollection<Location> testLocations = new ObservableCollection<Location>() {
             new Location() { Name="LeadBelly's", PointValue=8, GPSCoordinates=new Tuple<double, double>(40.816,-96.710),
-                Description="A gourmet burger joint that brings the bur to burger."},
+                Description="A gourmet burger joint that brings the bur to burger.", Thumbnail=new Image(){ Source="city.jpg"},
+                ImageList=new List<Image>() { new Image() { Source = "city.jpg" }, new Image() { Source = "location.png" } } },
             new Location() { Name="Ivana Cone", PointValue=5, GPSCoordinates=new Tuple<double, double>(0,0) },
             new Location() { Name="Hurt's Donuts", PointValue=3, GPSCoordinates=new Tuple<double, double>(0,0) },
             new Location() { Name="The Rail Yard", PointValue=7, GPSCoordinates=new Tuple<double, double>(0,0) },
@@ -58,6 +60,17 @@ namespace YoCity.Helpers
         {
             //TODO: Actually hook this up when API is done
             return testUser;
+        }
+
+        /// <summary>
+        /// Function that calls api with a PATCH on a User object and returns the edited User object if sucessful
+        /// Null otherwise
+        /// </summary>
+        /// <param name="newUser"></param>
+        /// <returns></returns>
+        public static User EditUser(User newUser)
+        {
+            return null;
         }
 
         /// <summary>

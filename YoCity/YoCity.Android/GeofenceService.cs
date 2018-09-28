@@ -16,6 +16,7 @@ namespace YoCity.Droid
     /// Service function to ensure that the geofencing continue running even if the application is closed
     /// I really have no idea what is going on here. I just copy and pasted. If I have to figure it out
     /// I will later
+    /// URL to this Plugin's Documentation: https://github.com/CrossGeeks/GeofencePlugin
     /// </summary>
     [Service]
     public class GeofenceService : Service

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\city.jpg" />
     <None Remove="Images\gift.png" />
     <None Remove="Images\location.png" />
     <None Remove="Images\locations.png" />
@@ -12,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\city.jpg" />
     <EmbeddedResource Include="Images\gift.png" />
     <EmbeddedResource Include="Images\location.png" />
     <EmbeddedResource Include="Images\profile.png" />

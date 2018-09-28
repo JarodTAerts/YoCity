@@ -29,6 +29,7 @@ namespace YoCity.Droid
             //CrossGeofence.Initialize<CrossGeofenceListener>();
             //CrossGeofence.GeofenceListener.OnAppStarted();
             //Start a sticky service to keep receiving geofence events when app is closed.
+            // URL to this Plugin's Documentation: https://github.com/CrossGeeks/GeofencePlugin
             StartService();
         }
 

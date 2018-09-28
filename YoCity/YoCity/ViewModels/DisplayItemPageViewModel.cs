@@ -48,11 +48,19 @@ namespace YoCity.ViewModels
             set => SetProperty(ref _buttonText,value);
         }
 
+        // Not used at the moment
         private List<Image> _imageList;
         public List<Image> ImageList
         {
             get => _imageList;
             set => SetProperty(ref _imageList, value);
+        }
+
+        private Image _thumbnail;
+        public Image Thumbnail
+        {
+            get => _thumbnail;
+            set => SetProperty(ref _thumbnail, value);
         }
 
         public DisplayItemPageViewModel(INavigationService navigationService) : base(navigationService)
@@ -94,6 +102,7 @@ namespace YoCity.ViewModels
                 Description = location.Description;
                 Points = location.PointValue;
                 ImageList = location.ImageList;
+                Thumbnail = location.Thumbnail;
                 ButtonText = "Open in Maps";
                 currentLocation = location;
                 showingLocation = true;
@@ -104,7 +113,8 @@ namespace YoCity.ViewModels
                 Sawg swag = (Sawg)parameters.SingleOrDefault(p => p.Key.Equals("SWAG")).Value;
                 Name = swag.Name;
                 Description = swag.Description;
-                Points = swag.PointsCost;               
+                Points = swag.PointsCost;
+                Thumbnail = swag.Thumbnail;
                 ButtonText = "Redeem Points";
                 currentSwag = swag;
             }

@@ -16,14 +16,19 @@
                 <Label Text="Point Value" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="{StaticResource baseTextColor}"/>
             </StackLayout>
             <!--Listview to show all the locations in LocationList-->
-            <ListView ItemsSource="{Binding LocationList}" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}">
+            <ListView ItemsSource="{Binding LocationList}" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}" RowHeight="55" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <!--Custom Viewcell to show the locations and their point values-->
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding Thumbnail.Source}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" 
-                                       HeightRequest="30" WidthRequest="30"/>
+                                <!--<Image Source="{Binding Thumbnail.Source}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" 
+                                       HeightRequest="30" WidthRequest="30"/>-->
+                                <Frame HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="50"
+                                    CornerRadius="10" HasShadow="False" Margin="2,2,2,2" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent">
+                                    <Image Source="{Binding Thumbnail.Source}" Aspect="AspectFill"/>
+                                </Frame>
+
                                 <Label Text="{Binding Name}" FontSize="Large" HorizontalOptions="StartAndExpand" TextColor="{StaticResource baseTextColor}"
                                        VerticalOptions="CenterAndExpand"/>
                                 <Label Text="{Binding PointValue}" FontSize="Large" HorizontalOptions="EndAndExpand" TextColor="{StaticResource baseTextColor}"

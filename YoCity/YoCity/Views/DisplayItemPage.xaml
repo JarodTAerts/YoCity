@@ -8,38 +8,33 @@
              BackgroundColor="{StaticResource colorPrimary}">
 
     <ContentPage.Content>
-        <StackLayout Padding="15">
-            <!--Button to go back to the login screen-->
-            <Button Text="Back" HorizontalOptions="StartAndExpand" VerticalOptions="Start" CornerRadius="20" BorderColor="{StaticResource buttonColor}"
+        <ScrollView>
+            <StackLayout Padding="15">
+                <!--Button to go back to the login screen-->
+                <Button Text="Back" HorizontalOptions="StartAndExpand" VerticalOptions="Start" CornerRadius="20" BorderColor="{StaticResource buttonColor}"
                     BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding BackButtonClickedCommand}" HeightRequest="35" 
                         FontSize="Micro" />
-            
-            <!--<ListView Rotation="-90" ItemsSource="{Binding ImageList}" VerticalOptions="Start" BackgroundColor="BlueViolet">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            --><!--Custom view cell that shows the name of the swag item and the number of points it costs--><!--
-                            <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding Source}" HorizontalOptions="EndAndExpand" VerticalOptions="Start" 
-                                      Rotation="90"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
-            
-            <Label Text="{Binding Name}" FontSize="Large" TextColor="{StaticResource baseTextColor}" HorizontalOptions="StartAndExpand"/>
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Points: " HorizontalOptions="Start" FontSize="Medium" TextColor="{StaticResource baseTextColor}"/>
-                <Label Text="{Binding Points}" FontSize="Medium" TextColor="{StaticResource baseTextColor}"/>
-            </StackLayout>
+                <!--<Image Source="{Binding Thumbnail.Source}" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" 
+                                      Rotation="0" Aspect="AspectFit" WidthRequest="300" HeightRequest="300"/>-->
+                <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="Start" HeightRequest="300" WidthRequest="300"
+                                    CornerRadius="40" HasShadow="False" Margin="2,2,2,2" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent">
+                    <Image Source="{Binding Thumbnail.Source}" Aspect="AspectFill"/>
+                </Frame>
 
-            <Label Text="{Binding Description}" FontSize="Small" TextColor="{StaticResource baseTextColor}" HorizontalOptions="StartAndExpand"/>
-            <!--Button to create the account-->
-            <Button Text="{Binding ButtonText}" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" CornerRadius="25" BorderColor="{StaticResource buttonColor}"
+                <Label Text="{Binding Name}" FontSize="Large" TextColor="{StaticResource baseTextColor}" HorizontalOptions="StartAndExpand"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Points: " HorizontalOptions="Start" FontSize="Medium" TextColor="{StaticResource baseTextColor}"/>
+                    <Label Text="{Binding Points}" FontSize="Medium" TextColor="{StaticResource baseTextColor}"/>
+                </StackLayout>
+
+                <Label Text="{Binding Description}" FontSize="Small" TextColor="{StaticResource baseTextColor}" HorizontalOptions="StartAndExpand"/>
+                <!--Button to create the account-->
+                <Button Text="{Binding ButtonText}" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" CornerRadius="25" BorderColor="{StaticResource buttonColor}"
                     BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding ActionButtonClickedCommand}"/>
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
-  
+
 </ContentPage>

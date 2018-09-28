@@ -26,6 +26,7 @@ namespace YoCity.iOS
             LoadApplication(new App(new iOSInitializer()));
 
             // Initilize the geofence, much easier than on android
+            // URL to this Plugin's Documentation: https://github.com/CrossGeeks/GeofencePlugin
             CrossGeofence.Initialize<CrossGeofenceListener>();
 
             return base.FinishedLaunching(app, options);
