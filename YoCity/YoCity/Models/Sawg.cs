@@ -32,6 +32,6 @@ namespace YoCity.Models
              new Image() { Source = "profile" },
              new Image() { Source = "location" },
              new Image() { Source = "gift" },
-    };
+            };
     }
 }

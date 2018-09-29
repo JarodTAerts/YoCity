@@ -118,6 +118,7 @@ namespace YoCity.ViewModels
                 Description = swag.Description;
                 Points = swag.PointsCost;
                 Thumbnail = swag.Thumbnail;
+                ImageList = swag.ImageList;
                 ButtonText = "Redeem Points";
                 currentSwag = swag;
             }
