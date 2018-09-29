@@ -34,6 +34,18 @@ namespace YoCity.Models
 
         public Image Thumbnail { get; set; } = new Image() { Source = "location" };
 
+        public Address LocationAddress { get; set; }
+        public class Address
+        {
+            public string Street { get; set; }
+            public string City { get; set; }
+            public string State { get; set; }
+            public string Zip { get; set; }
+            public string Country { get; set; }
+            public string CountryCode { get; set; }
+        }
+
+
         public List<Image> ImageList { get; set; } =
             new List<Image>() {
              new Image() { Source = "profile" },

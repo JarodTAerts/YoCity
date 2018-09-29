@@ -75,7 +75,10 @@ namespace YoCity.ViewModels
             {
                 if (currentLocation != null && currentLocation.GPSCoordinates!=null)
                 {
-                    await CrossExternalMaps.Current.NavigateTo(currentLocation.Name, currentLocation.GPSCoordinates.Item1, currentLocation.GPSCoordinates.Item2);
+                    Location.Address currentAddress = currentLocation.LocationAddress;
+                    // Use this plugin to open up installed maps app and navigate to selected location
+                    await CrossExternalMaps.Current.NavigateTo(currentLocation.Name, currentAddress.Street, currentAddress.City, 
+                        currentAddress.State,currentAddress.Zip,currentAddress.Country,currentAddress.CountryCode);
                 }
                 else
                 {

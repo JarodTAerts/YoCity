@@ -8,15 +8,26 @@
              BackgroundColor="{StaticResource colorPrimary}">
 
 
-    <ContentPage.Content>
-        <StackLayout Padding="15">
+    <ContentPage.Content >
+        <Grid Padding="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <!--Labels horizontal that are the header for the list on the page-->
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
                 <Label Text="Location" FontSize="Large" HorizontalOptions="StartAndExpand" FontAttributes="Bold" TextColor="{StaticResource baseTextColor}"/>
                 <Label Text="Point Value" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="{StaticResource baseTextColor}"/>
             </StackLayout>
             <!--Listview to show all the locations in LocationList-->
-            <ListView ItemsSource="{Binding LocationList}" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}" RowHeight="55" SeparatorVisibility="None">
+
+
+                
+            <ListView ItemsSource="{Binding LocationList}" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}" RowHeight="55" SeparatorVisibility="None" 
+                      Grid.Row="1" Grid.Column="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -38,7 +49,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+        </Grid>
+
 
     </ContentPage.Content>
 

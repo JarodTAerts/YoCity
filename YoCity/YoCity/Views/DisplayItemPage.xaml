@@ -7,16 +7,16 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="{StaticResource colorPrimary}">
 
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="15">
+    <ContentPage.Content >
+
+        <StackLayout Padding="15">
                 <!--Button to go back to the login screen-->
                 <Button Text="Back" HorizontalOptions="StartAndExpand" VerticalOptions="Start" CornerRadius="20" BorderColor="{StaticResource buttonColor}"
                     BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding BackButtonClickedCommand}" HeightRequest="35" 
                         FontSize="Micro" />
 
                 <!--<Image Source="{Binding Thumbnail.Source}" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" 
-                                      Rotation="0" Aspect="AspectFit" WidthRequest="300" HeightRequest="300"/>-->
+                                      Rotation="0" Aspect="AspectFit" WidthRequest="300" HeightRequest="300"/>-->             
                 <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="Start" HeightRequest="300" WidthRequest="300"
                                     CornerRadius="40" HasShadow="False" Margin="2,2,2,2" Padding="0" IsClippedToBounds="True" BackgroundColor="Transparent">
                     <Image Source="{Binding Thumbnail.Source}" Aspect="AspectFill"/>
@@ -34,7 +34,7 @@
                 <Button Text="{Binding ButtonText}" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" CornerRadius="25" BorderColor="{StaticResource buttonColor}"
                     BackgroundColor="{StaticResource buttonColor}" TextColor="{StaticResource buttonTextColor}" Command="{Binding ActionButtonClickedCommand}"/>
             </StackLayout>
-        </ScrollView>
+
     </ContentPage.Content>
 
 </ContentPage>

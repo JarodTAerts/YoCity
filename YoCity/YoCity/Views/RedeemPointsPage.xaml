@@ -8,14 +8,22 @@
              BackgroundColor="{StaticResource colorPrimary}">
 
     <ContentPage.Content>
-        <StackLayout Padding="15">
+        <Grid Padding="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <!--Labels that form the header of the list of swag items-->
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
                 <Label Text="Item" FontSize="Large" HorizontalOptions="StartAndExpand" FontAttributes="Bold" TextColor="{StaticResource baseTextColor}"/>
                 <Label Text="Cost" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="{StaticResource baseTextColor}"/>
             </StackLayout>
             <!--List view that shows all the swag items contained in ItemList-->
-            <ListView ItemsSource="{Binding ItemList}" SelectedItem="{Binding SelectedSwag, Mode=TwoWay}" RowHeight="55" SeparatorVisibility="None">
+            <ListView ItemsSource="{Binding ItemList}" SelectedItem="{Binding SelectedSwag, Mode=TwoWay}" RowHeight="55" SeparatorVisibility="None"
+                       Grid.Row="1" Grid.Column="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -36,7 +44,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+        </Grid>
 
     </ContentPage.Content>
 </ContentPage>

@@ -17,7 +17,8 @@ namespace YoCity.Helpers
         private static ObservableCollection<Location> testLocations = new ObservableCollection<Location>() {
             new Location() { Name="LeadBelly's", PointValue=8, GPSCoordinates=new Tuple<double, double>(40.816,-96.710),
                 Description="A gourmet burger joint that brings the bur to burger.", Thumbnail=new Image(){ Source="city.jpg"},
-                ImageList=new List<Image>() { new Image() { Source = "city.jpg" }, new Image() { Source = "location.png" } } },
+                LocationAddress=new Location.Address() { City="Lincoln", State="Nebraska", Street="301 N 8th St", Zip="68508", Country="USA", CountryCode="USA" },
+                ImageList=new List<Image>(){ new Image() { Source="city"}, new Image(){ Source="location" } } },
             new Location() { Name="Ivana Cone", PointValue=5, GPSCoordinates=new Tuple<double, double>(0,0) },
             new Location() { Name="Hurt's Donuts", PointValue=3, GPSCoordinates=new Tuple<double, double>(0,0) },
             new Location() { Name="The Rail Yard", PointValue=7, GPSCoordinates=new Tuple<double, double>(0,0) },
