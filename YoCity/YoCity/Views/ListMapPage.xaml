@@ -26,8 +26,8 @@
 
 
                 
-            <ListView ItemsSource="{Binding LocationList}" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}" RowHeight="55" SeparatorVisibility="None" 
-                      Grid.Row="1" Grid.Column="0">
+            <ListView ItemsSource="{Binding LocationList}" SelectedItem="{Binding SelectedLocation, Mode=TwoWay}" RowHeight="65" SeparatorVisibility="None" 
+                      Grid.Row="1" Grid.Column="0" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

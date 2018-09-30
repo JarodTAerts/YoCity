@@ -22,13 +22,13 @@
                 <Label Text="Cost" FontSize="Large" HorizontalOptions="EndAndExpand" FontAttributes="Bold" TextColor="{StaticResource baseTextColor}"/>
             </StackLayout>
             <!--List view that shows all the swag items contained in ItemList-->
-            <ListView ItemsSource="{Binding ItemList}" SelectedItem="{Binding SelectedSwag, Mode=TwoWay}" RowHeight="55" SeparatorVisibility="None"
+            <ListView ItemsSource="{Binding ItemList}" SelectedItem="{Binding SelectedSwag, Mode=TwoWay}" RowHeight="65" SeparatorVisibility="None"
                        Grid.Row="1" Grid.Column="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <!--Custom view cell that shows the name of the swag item and the number of points it costs-->
-                            <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal" >
                                 <!--<Image Source="{Binding Thumbnail.Source}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" 
                                        HeightRequest="30" WidthRequest="30"/>-->
                                 <Frame HorizontalOptions="Start" VerticalOptions="CenterAndExpand" HeightRequest="50" WidthRequest="50"
