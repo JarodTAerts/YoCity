@@ -17,7 +17,7 @@
 
                 <!--<Image Source="{Binding Thumbnail.Source}" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" 
                                       Rotation="0" Aspect="AspectFit" WidthRequest="300" HeightRequest="300"/>-->
-            <Grid HeightRequest="300" WidthRequest="300" Margin="0,10,0,0">
+            <Grid HeightRequest="340" HorizontalOptions="FillAndExpand" Margin="0,10,0,0" BackgroundColor="Blue">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
@@ -26,7 +26,7 @@
                 </Grid.RowDefinitions>
 
                 <ListView ItemsSource="{Binding ImageList}" RowHeight="302" Rotation="-90" SeparatorVisibility="None" SelectionMode="None"
-                          Grid.Column="0" Grid.Row="0">
+                          Grid.Column="0" Grid.Row="0" BackgroundColor="Red">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
