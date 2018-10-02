@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
+using YoCity.Helpers;
 using YoCity.Models;
 
 namespace YoCity.ViewModels
@@ -73,9 +74,10 @@ namespace YoCity.ViewModels
         {
             if (showingLocation)
             {
-                if (currentLocation != null && currentLocation.GPSCoordinates!=null)
+                if (currentLocation != null && currentLocation.LocationAddress!=null)
                 {
                     Location.Address currentAddress = currentLocation.LocationAddress;
+                    HelperFunctions.AddPoints(currentLocation.PointValue);
                     // Use this plugin to open up installed maps app and navigate to selected location
                     await CrossExternalMaps.Current.NavigateTo(currentLocation.Name, currentAddress.Street, currentAddress.City, 
                         currentAddress.State,currentAddress.Zip,currentAddress.Country,currentAddress.CountryCode);

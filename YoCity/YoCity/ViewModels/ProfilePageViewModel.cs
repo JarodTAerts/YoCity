@@ -27,7 +27,6 @@ namespace YoCity.ViewModels
         #region Constructor
         public ProfilePageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            CurrentUser = Settings.CurrentUser;
             LogoutButtonClickedCommand = new DelegateCommand(LogoutButtonClicked);
             SettingsButtonClickedCommand = new DelegateCommand(SettingsButtonClicked);
         }
@@ -56,5 +55,15 @@ namespace YoCity.ViewModels
             }
         }
         #endregion
+
+
+
+        public override void OnNavigatingTo(NavigationParameters parameters)
+        {
+            base.OnNavigatingTo(parameters);
+            CurrentUser = Settings.CurrentUser;
+        }
+
+        
     }
 }

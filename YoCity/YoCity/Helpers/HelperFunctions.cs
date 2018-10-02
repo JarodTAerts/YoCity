@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
+using YoCity.Models;
 
 namespace YoCity.Helpers
 {
@@ -28,6 +29,9 @@ namespace YoCity.Helpers
             }
         }
 
+        /// <summary>
+        /// Function that will look at the setting value for dark mode and set the system colors based on that
+        /// </summary>
         public static void SetDarkMode()
         {
             if (Settings.DarkMode)
@@ -42,6 +46,26 @@ namespace YoCity.Helpers
                 Application.Current.Resources["buttonColor"] = Color.FromHex("#F5F5F5");
                 Application.Current.Resources["buttonTextColor"] = Color.FromHex("#42C0FB");
             }
+        }
+
+        public static bool AddPoints(int points)
+        {
+            User currentUser = Settings.CurrentUser;
+            currentUser.Points += points;
+
+            // Call API with call to update user with point value if the return is not null then keep the point change else take it away
+            bool returnValue = true; // Call to the API Add points function
+            if (returnValue)
+            {
+                Settings.CurrentUser = currentUser;
+            }
+            else
+            {
+                currentUser.Points -= points;
+            }
+
+
+            return returnValue;
         }
     }
 }
